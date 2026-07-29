@@ -214,3 +214,5 @@ database persists → `refresh_all()` fans the change out to every tab.** Each
 layer has one job, which is what makes the app easy to reason about and
 extend.
 
+Install matplotlib via requirements.txt
+Open a terminal inside your project folder and run `pip install -r requirements.txt`. This installs matplotlib — the only external package the app needs.
