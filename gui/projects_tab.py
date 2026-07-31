@@ -15,9 +15,8 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 
 from gui.base import BaseTab
-from gui.utils import parse_date, tint
+from gui.utils import parse_date
 from model import Project
-from reports import STATUS_COLORS
 
 
 class ProjectsTab(BaseTab):
@@ -63,11 +62,6 @@ class ProjectsTab(BaseTab):
         scroll.pack(side="right", fill="y")
         self.tree.configure(yscrollcommand=scroll.set)
 
-        # Reuse the exact same status -> colour mapping the Reports charts
-        # use, so "red" means "Overdue" the same way everywhere in the app.
-        for status, color in STATUS_COLORS.items():
-            self.tree.tag_configure(status, background=tint(color))
-
         ttk.Button(self, text="Delete Selected Project", command=self.delete_selected).pack(pady=8)
 
     # -------------------------------------------------------------- actions --
@@ -110,6 +104,6 @@ class ProjectsTab(BaseTab):
                 "", "end",
                 values=(p.name, p.deadline, p.days_remaining,
                         f"{p.progress}%", p.task_count, p.status),
-                tags=(p.status, str(p.project_id)),
+                tags=(str(p.project_id),),
             )
             
