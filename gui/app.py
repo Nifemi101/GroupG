@@ -31,6 +31,7 @@ from gui.projects_tab import ProjectsTab
 from gui.team_tab import TeamTab
 from gui.tasks_tab import TasksTab
 from gui.reports_tab import ReportsTab
+from gui.students_tab import StudentsTab
 
 # (Tab class, notebook label) in display order. self.tabs is built from this,
 # so the notebook order and the refresh order always stay in step.
@@ -40,6 +41,7 @@ TABS = [
     (TeamTab, "Team"),
     (TasksTab, "Tasks"),
     (ReportsTab, "Reports"),
+    (StudentsTab, "Students"),
 ]
 
 
