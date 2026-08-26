@@ -104,3 +104,4 @@ class TeamTab(BaseTab):
                 values=(m.name, m.email, m.get_role(), f"{active} / {capacity}"),
                 tags=(tag, str(m.id)),
             )
+            
